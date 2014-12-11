@@ -1,0 +1,20 @@
+<h1>Listing records</h1>
+
+<table class="align_center text_align_center">
+  <tr>
+    <th>Date</th>
+    <th>Weight</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @records.each do |record| %>
+    <tr>
+      <td><%= record.date %></td>
+      <td><%= record.weight %></td>
+      <td><%= link_to 'Show', record_path(record) %></td>
+      <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New record', new_record_path %>
